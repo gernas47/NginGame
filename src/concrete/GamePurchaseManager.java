@@ -1,11 +1,14 @@
 package concrete;
 
-import abstracrs.GamePurchaseService;
+
+import abstracrs.Product;
+import abstracrs.PurchaseService;
 import entities.User;
 
-public class GamePurchaseManager implements GamePurchaseService {
+public class GamePurchaseManager implements PurchaseService {
+
     @Override
-    public void buyGame(User user) {
-        System.out.println("Tebrikler! " + user.getFirstName() + " oyunumuzu satın aldınız. Harika seçim!");
+    public void buy(User user, Product product) {
+        System.out.println("Tebrikler! " + user.getFirstName() + " ürünü başarılı bir şekilde satın aldınız.");
     }
 }

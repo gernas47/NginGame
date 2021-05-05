@@ -1,10 +1,11 @@
 package entities;
 
 import abstracrs.Entity;
+import abstracrs.Product;
 
 import java.time.LocalDate;
 
-public class Campaign implements Entity {
+public class Campaign implements Entity, Product {
     private int id;
     private String campaignName;
     private LocalDate campaignExpirationDate;

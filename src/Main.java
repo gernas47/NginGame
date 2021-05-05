@@ -1,10 +1,13 @@
 import abstracrs.CampaignService;
+import abstracrs.Product;
+import abstracrs.PurchaseService;
 import adapters.MernisServiceAdapter;
 import concrete.CampaignManager;
 import concrete.CampaignPurchaseManager;
 import concrete.GamePurchaseManager;
 import concrete.UserManager;
 import entities.Campaign;
+import entities.Game;
 import entities.User;
 
 import java.time.LocalDate;
@@ -17,7 +20,7 @@ public class Main {
         GamePurchaseManager gamePurchaseManager = new GamePurchaseManager();
         userManager.register(gernas);
         userManager.updateProfile(gernas);
-        gamePurchaseManager.buyGame(gernas);
+
 
         System.out.println("----------------------------");
 
@@ -30,11 +33,15 @@ public class Main {
         campaignManager.createCampaign(campaign1);
         campaignManager.updateCampaign(campaign1);
 
+        Game nginGame = new Game();
+
         System.out.println("----------------------------");
 
-        CampaignPurchaseManager campaignPurchaseManager = new CampaignPurchaseManager();
-        campaignPurchaseManager.buyCampaign(gernas, campaign1);
+        PurchaseService purchaseService1 = new GamePurchaseManager();
+        PurchaseService purchaseService2 = new CampaignPurchaseManager();
 
+        purchaseService1.buy(gernas, nginGame);
+        purchaseService2.buy(gernas, campaign1);
         System.out.println("----------------------------");
 
         campaignManager.endCampaign(campaign1);

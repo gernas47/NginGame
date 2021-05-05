@@ -1,13 +1,16 @@
 package concrete;
 
-import abstracrs.CampaignPurchaseService;
+import abstracrs.Product;
+import abstracrs.PurchaseService;
 import entities.Campaign;
+import entities.Game;
 import entities.User;
 
-public class CampaignPurchaseManager implements CampaignPurchaseService {
+public class CampaignPurchaseManager implements PurchaseService {
+
 
     @Override
-    public void buyCampaign(User user, Campaign campaign) {
-        System.out.println("Tebrikler! " + user.getFirstName() + " " + campaign.getCampaignName() + "'na katıldınız." );
+    public void buy(User user, Product product) {
+
     }
 }
